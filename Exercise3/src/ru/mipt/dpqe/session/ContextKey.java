@@ -14,6 +14,7 @@ public class ContextKey {
         this.prefix = prefix;
     }
 
+    // Still better written equals(...) is required, but it will go for now :)
     @Override                               // We are overriding Object.equals(...).
     public boolean equals(Object obj) {     // Arguments are part of signature, so Object, not ContextKey.
         ContextKey o = (ContextKey)obj;     // Parsing Object to compare to into ContextKey.
