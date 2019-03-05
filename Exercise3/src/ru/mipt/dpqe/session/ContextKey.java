@@ -7,7 +7,7 @@ package ru.mipt.dpqe.session;
 // This is legit now.
 public class ContextKey {
     public final String key;        // They need to be open to another instance of ContextKey, when compared.
-    public final String prefix;     // Also, they are final, so no trouble making them public :)
+    public final String prefix;     // Also, they are final, so makes no trouble making them public, I guess
 
     public ContextKey(String key, String prefix) {
         this.key = key;
@@ -18,8 +18,6 @@ public class ContextKey {
     @Override                               // We are overriding Object.equals(...).
     public boolean equals(Object obj) {     // Arguments are part of signature, so Object, not ContextKey.
         ContextKey o = (ContextKey)obj;     // Parsing Object to compare to into ContextKey.
-        String otherKey = o.key;
-        boolean keyEquals = key.equalsIgnoreCase(o.key);
         return key.equalsIgnoreCase(o.key) && prefix.equalsIgnoreCase(o.prefix);
     }
 
